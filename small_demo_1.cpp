@@ -1,10 +1,10 @@
 /*
- * @Descripttion: 使用malloc开辟空间后，对应的指针是否还有效 if(void*)
+ * @Descripttion: 使用free释放空间后，对应的指针是否还有效 if(void*)
  * @Author: jev
  * @version: 
  * @Date: 2025-02-08
  * @LastEditors: jev
- * @LastEditTime: 2025-02-08
+ * @LastEditTime: 2025-02-22
  */
 #include <iostream>
 

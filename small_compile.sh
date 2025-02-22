@@ -15,7 +15,7 @@ fi
 
 # 传入两个参数用于编译
 echo "Compiling $1 to $folder/$2"
-g++ $1 -o "$folder"/$2
+g++ -std=c++17 $1 -o "$folder"/$2
 
 if [ $? -eq 0 ]; then
     echo "Compilation successful: $folder/$2"
