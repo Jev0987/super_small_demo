@@ -17,12 +17,13 @@ void onAdd(std::promise<int> &p, int a, int b) {
     p.set_value(a + b);
 }
 
-int main() {
+void demo_promise_ref() {
+    std::cout << __func__ << std::endl;
     // “承诺”，在某个时刻会提供一个值或者异常
-    std::promise<int> promise_;  
+    std::promise<int> promise_;
 
     // 用来获取这个值的 “未来对象”
-    std::future<int> future_ = promise_.get_future();  
+    std::future<int> future_ = promise_.get_future();
 
     // 新线程调用onAdd函数，将promise_作为参数传递
     std::thread t(onAdd, std::ref(promise_), 1, 2);
@@ -32,6 +33,4 @@ int main() {
 
     // 等待子线程结束
     t.join();
-    
-    return 0;
 }

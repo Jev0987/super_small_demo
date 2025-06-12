@@ -46,7 +46,8 @@ bool create_node_data_by_addr(Node **node) {
   return true;
 }
 
-int main() {
+void demo_review_ptr_use() {
+  std::cout << __func__ << std::endl;
   // std::shared_ptr<Node> node = std::make_shared<Node>();  //
   // 使用智能指针，就不用手动释放内存了
   Node *node = new Node();
@@ -65,5 +66,4 @@ int main() {
   create_node_data_by_addr(&new_node);
 
   std::cout << "new_node data: " << new_node->data << std::endl;
-  return 0;
 }

@@ -8,8 +8,8 @@
  */
 #include <iostream>
 
-int main(int argc, char * argv[]) {
-    
+void check_free_malloc() {
+    std::cout << __func__ << std::endl;
     void* buff = malloc(10);
 
     free(buff);
@@ -19,6 +19,4 @@ int main(int argc, char * argv[]) {
         // 这里如果继续进行 free，会出现重复 free的错误
         // free(buff);
     }
-
-    return 0;
 }

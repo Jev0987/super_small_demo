@@ -15,7 +15,8 @@ int calculate_num(int x) {
     return x * x;
 }
 
-int main() {
+void demo_async_mission() {
+    std::cout << __func__ << std::endl;
     // 1. 默认模式
     std::future<int> fut_default = std::async(calculate_num, 10);
     std::cout << "当前是默认模式" << std::endl;
@@ -30,6 +31,4 @@ int main() {
     std::future<int> fut_deferred = std::async(std::launch::deferred, calculate_num, 10);
     std::cout << "当前是延迟模式, 未调用get()不执行" << std::endl;
     std::cout << "延迟结果: " << fut_deferred.get() << std::endl;
-
-    return 0;
 }
