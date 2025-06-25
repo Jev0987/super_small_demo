@@ -13,6 +13,7 @@ add_library(demo
         demo_friend_method.cpp
         demo_review_ptr_use.cpp
         demo_use_enum.cpp
+        demo_condition_variable.cpp
 )
 
 add_executable(${PROJECT_NAME}

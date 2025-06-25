@@ -7,6 +7,6 @@ int main() {
 
     // input test function
     std::cout << "input test function" << std::endl;
-    demo_use_enum();
+    demo_condition_variable();
     return 0;
 }

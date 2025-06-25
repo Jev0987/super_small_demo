@@ -18,5 +18,6 @@ void demo_friend_method();
 void demo_review_ptr_use();
 void demo_print_enum_hex();
 void demo_use_enum();
+void demo_condition_variable();
 
 #endif //ALL_DEMO_INCLUDE_H
