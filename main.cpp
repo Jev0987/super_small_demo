@@ -7,6 +7,6 @@ int main() {
 
     // input test function
     std::cout << "input test function" << std::endl;
-    demo_friend_method();
+    demo_use_enum();
     return 0;
 }

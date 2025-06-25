@@ -4,7 +4,7 @@
  * @Date: 25-6-15
  */
 #include <iostream>
-
+#include <memory>
 // 基类
 class Base {
 public:

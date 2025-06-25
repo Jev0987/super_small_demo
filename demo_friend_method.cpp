@@ -6,7 +6,6 @@
 #include <iostream>
 #include <string>
 #include <utility>
-#include <__ostream/basic_ostream.h>
 
 class People {
 public:

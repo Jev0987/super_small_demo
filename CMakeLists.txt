@@ -12,6 +12,7 @@ add_library(demo
         demo_check_free_malloc.cpp
         demo_friend_method.cpp
         demo_review_ptr_use.cpp
+        demo_use_enum.cpp
 )
 
 add_executable(${PROJECT_NAME}
