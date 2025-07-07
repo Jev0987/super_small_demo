@@ -15,7 +15,9 @@ int state = 0; // 0 for A, 1 for B, 2 for C
 void printA(int max_count) {
     for (int i = 0; i < max_count; ++i) {
         std::unique_lock<std::mutex> lck(mtx);
-        cv.wait(lck, [] { return state == 0; });
+
+        // state == 0 拿锁，往下执行，否则解锁，直接返回（减少资源占用）
+        cv.wait(lck, [] { return state == 0; }); 
         std::cout << "A";
         state = 1;
         lck.unlock();

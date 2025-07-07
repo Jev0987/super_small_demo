@@ -14,6 +14,9 @@ add_library(demo
         demo_review_ptr_use.cpp
         demo_use_enum.cpp
         demo_condition_variable.cpp
+        demo_thread_print_ABC.cpp
+        demo_producer_consumer_mutex_cond.cpp
+        demo_thread_print_ABC2.cpp
 )
 
 add_executable(${PROJECT_NAME}

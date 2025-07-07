@@ -7,6 +7,6 @@ int main() {
 
     // input test function
     std::cout << "input test function" << std::endl;
-    demo_condition_variable();
+    demo_producer_consumer_mtx_cv();
     return 0;
 }

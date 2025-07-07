@@ -19,5 +19,8 @@ void demo_review_ptr_use();
 void demo_print_enum_hex();
 void demo_use_enum();
 void demo_condition_variable();
+void demo_mutil_thread_print();
+void demo_producer_consumer_mtx_cv();
+void demo_thread_print_ABC2();
 
 #endif //ALL_DEMO_INCLUDE_H
