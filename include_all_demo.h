@@ -1,4 +1,4 @@
-/* 
+/*
  * @Descripttion: 所有demo的头文件
  * @Author: Jev
  * @Date: 25-6-15
@@ -9,6 +9,7 @@
 
 // 函数前向声明，防止未声明
 // 定义在cpp中定义
+// 此处添加新增的函数名
 void demo_async_mission();
 void demo_create_destroy();
 void check_free_malloc();
@@ -22,5 +23,6 @@ void demo_condition_variable();
 void demo_mutil_thread_print();
 void demo_producer_consumer_mtx_cv();
 void demo_thread_print_ABC2();
+void demo_print_refrence();
 
-#endif //ALL_DEMO_INCLUDE_H
+#endif  // ALL_DEMO_INCLUDE_H

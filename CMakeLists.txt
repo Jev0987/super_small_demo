@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.31)
+cmake_minimum_required(VERSION 3.21)
 project(super_small_demo)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -17,6 +17,7 @@ add_library(demo
         demo_thread_print_ABC.cpp
         demo_producer_consumer_mutex_cond.cpp
         demo_thread_print_ABC2.cpp
+        demo_print_refrence.cpp
 )
 
 add_executable(${PROJECT_NAME}
