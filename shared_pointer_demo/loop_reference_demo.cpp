@@ -2,8 +2,8 @@
  * @Descripttion: shared_ptr 可能会导致的循环引用的问题
  * @Author: zhanjiewen
  * @Date: 2025-10-17
- * @LastEditors: zhanjiewen
- * @LastEditTime: 2025-10-20
+ * @LastEditors: jev
+ * @LastEditTime: 2025-10-29
  */
 #include <iostream>
 #include <memory>
@@ -11,13 +11,15 @@
 struct LoopRefNode {
     int val;
     std::shared_ptr<LoopRefNode> next;  // 危险, 小心循环引用的问题
-    LoopRefNode(int value) : val(value) {}
+    LoopRefNode(int value)
+        : val(value) {}
 };
 
 struct SafeNode {
     int val;
     std::weak_ptr<SafeNode> next;
-    SafeNode(int value) : val(value) {}
+    SafeNode(int value)
+        : val(value) {}
 };
 
 void loop_refernce() {

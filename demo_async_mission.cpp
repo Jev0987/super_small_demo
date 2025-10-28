@@ -1,14 +1,14 @@
 /*
  * @Descripttion: 利用async创建异步任务
  * @Author: jev
- * @version: 
+ * @version:
  * @Date: 2025-02-22
  * @LastEditors: jev
- * @LastEditTime: 2025-02-22
+ * @LastEditTime: 2025-10-29
  */
 
-#include <iostream>
 #include <future>
+#include <iostream>
 
 int calculate_num(int x) {
     // std::cout << std::this_thread::get_id() << std::endl;
@@ -20,7 +20,7 @@ void demo_async_mission() {
     // 1. 默认模式
     std::future<int> fut_default = std::async(calculate_num, 10);
     std::cout << "当前是默认模式" << std::endl;
-    std::cout << "默认模式: " <<fut_default.get() << std::endl;
+    std::cout << "默认模式: " << fut_default.get() << std::endl;
 
     // 2. 异步模式
     std::future<int> fut_async = std::async(std::launch::async, calculate_num, 10);

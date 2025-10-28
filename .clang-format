@@ -15,8 +15,6 @@ AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortEnumsOnASingleLine: true
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: true
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: Yes
@@ -54,7 +52,7 @@ FixNamespaceComments: true
 IncludeBlocks: Preserve
 IndentCaseLabels: false
 IndentPPDirectives: None
-IndentWidth: 4
+# IndentWidth: 4
 IndentWrappedFunctionNames: false
 JavaScriptQuotes: Leave
 JavaScriptWrapImports: true
