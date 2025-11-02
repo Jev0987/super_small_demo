@@ -1,5 +1,5 @@
 /*
- * @Descripttion:
+ * @Descripttion: 依赖注入demo
  * @Author: jev
  * @version:
  * @Date: 2025-11-03
@@ -19,26 +19,47 @@ public:
     void start() override { std::cout << "gasoline engine start." << std::endl; }
 };
 
-class Car_1 {
+class Car {
+public:
+    virtual void start() = 0;
+    virtual ~Car() = default;
+};
+
+class Car_1 : Car {
 public:
     // 构造函数注入
     Car_1(Engine* engine)
         : engine_(engine) {}
-    ~Car_1() { delete engine_; }
+    ~Car_1() {
+        if (engine_ != nullptr) { delete engine_; }
+    }
+
+    void start() override {
+        if (engine_) { engine_->start(); }
+    }
 
 private:
     Engine* engine_;
 };
 
-class Car_2 {
+class Car_2 : public Car {
 public:
     // setter 方法注入
-    void setEngine(Engine* engine) { engine_ = engine; }
+    void setEngine(Engine* engine) {
+        if (engine_ != nullptr) { delete engine_; }
+        engine_ = engine;
+    }
 
-    ~Car_2() { delete engine_; }
+    ~Car_2() {
+        if (engine_ != nullptr) { delete engine_; }
+    }
+
+    void start() override {
+        if (engine_) { engine_->start(); }
+    }
 
 private:
-    Engine* engine_;
+    Engine* engine_ = nullptr;
 };
 
 class EngineInjectable {
@@ -47,13 +68,24 @@ public:
     virtual void injectEngine(Engine* engine) = 0;
 };
 
-class Car_3 : public EngineInjectable {
+class Car_3
+    : public EngineInjectable
+    , Car {
 public:
     // 接口注入
-    void injectEngine(Engine* engine) override { engine = engine_; }
+    void injectEngine(Engine* engine) override {
+        if (engine_ != nullptr) { delete engine_; }
+        engine_ = engine;
+    }
 
-    ~Car_3() { delete engine_; }
+    ~Car_3() {
+        if (engine_ != nullptr) { delete engine_; }
+    }
+
+    void start() override {
+        if (engine_) { engine_->start(); }
+    }
 
 private:
-    Engine* engine_;
+    Engine* engine_ = nullptr;
 };
